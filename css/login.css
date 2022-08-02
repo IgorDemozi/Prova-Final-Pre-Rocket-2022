@@ -1,0 +1,74 @@
+body {
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   padding-top: 13vh;
+   background-image: url(../imagens/Retângulo\ 310.svg), url(../imagens/emil-widlund-xrbbXIXAWY0-unsplash.png);
+   background-position-y: 0%, 65%;
+   font-family: 'Roboto', sans-serif;
+}
+
+#login-div {
+   background-color: white;
+   width: 370px;
+   height: 385px;
+   border-radius: 5px;
+   padding: 2.5em;
+}
+
+#login--container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 95%;
+}
+
+#login--logo {
+   width: 140px;
+   margin-bottom: 2em;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#login--campos-div {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1em;
+   margin-bottom: 0.7em;
+}
+
+.login--campos {
+   background-color: #F1F3F5;
+   padding: 1.5em;
+   border-radius: 5px;
+   border: 0;
+   font: 14px Roboto;
+}
+
+.campo-email {
+   background-image: url(../imagens/Grupo\ 37.svg);
+   background-repeat: no-repeat;
+   background-position: 94%;
+}
+
+.campo-senha {
+   background-image: url(../imagens/Grupo\ 36.svg);
+   background-repeat: no-repeat;
+   background-position: 94%;
+}
+
+#login--link-senha {
+   color: black;
+   font: normal normal bold 14px/19px Roboto;
+}
+
+#login--botao {
+   padding: 1em 0 1em 0;
+   border-radius: 5px;
+   border: 0;
+   background-color: #FFC501;
+   text-transform: uppercase;
+   font: normal normal bold 16px/21px Roboto;
+}

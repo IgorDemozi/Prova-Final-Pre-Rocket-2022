@@ -1,0 +1,81 @@
+body {
+   margin: 0;
+   background-color: #F4F4F4;
+   font-family: 'Roboto', sans-serif;
+}
+
+.flex-1 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.flex-2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#index--cabecalho {
+   background-color: white;
+   height: 96px;
+}
+
+#index--logo {
+   margin-left: 1.5em;
+}
+
+#index--usuario {
+   margin-right: 1.5em;
+   gap: 0.5em;
+   height: 30px;
+}
+
+#index--img-avatar {
+   width: 24px;
+}
+
+#index--img-seta {
+   width: 24px;
+}
+
+#index--principal {
+   background-color: white;
+   margin: 1.5em;
+   height: 77vh;
+}
+
+#index--principal-div-container {
+   width: 820px;
+   flex-wrap: wrap;
+}
+
+.index--principal-div-menor {
+   background-color: #F4F4F4;
+   height: 224px;
+   width: 250px;
+   flex-direction: column;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.index--principal-div-menor p {
+   margin: 0;
+   color: #343A40;
+}
+
+.index--principal-div-menor div {
+   width: 100%;
+   text-align: center;
+   height: 4.5em;
+   background-color: white;
+   box-shadow:0px 0px 0px 3px #F4F4F4 inset;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.index--principal-img {
+   margin-top: 3.5em;
+}

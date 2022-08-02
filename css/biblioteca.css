@@ -1,0 +1,42 @@
+#bilbioteca--container {
+   margin-top: 2em;
+   gap: 2em;
+}
+
+#biblioteca--pesquisa-form {
+   display: flex;
+   border: 1px solid #ADB5BD;
+   border-radius: 5px;
+   padding: 6px;
+   width: 666px;
+}
+
+#biblioteca--pesquisa-form img {
+   margin: 0 1em;
+}
+
+#biblioteca--pesquisa-texto {
+   border: none;
+   flex-grow: 2;
+}
+
+#biblioteca--pesquisa-texto:focus {
+   outline: none;
+}
+
+#biblioteca--pesquisa-botao {
+   border: none;
+   background-color: #FFC501;
+   border-radius: 5px;
+   width: 82px;
+   height: 37px;
+}
+
+#biblioteca--pesquisa-filtro {
+   border: 1px solid #ADB5BD;
+   height: 51px;
+   width: 200px;
+   padding: 0 1em;
+   border-radius: 5px;
+   font: normal normal normal 16px/21px Roboto;
+}
