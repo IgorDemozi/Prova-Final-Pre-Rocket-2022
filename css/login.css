@@ -71,4 +71,5 @@ body {
    background-color: #FFC501;
    text-transform: uppercase;
    font: normal normal bold 16px/21px Roboto;
+   cursor: pointer;
 }

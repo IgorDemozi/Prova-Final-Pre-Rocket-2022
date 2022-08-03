@@ -13,42 +13,51 @@
    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<header id="index--cabecalho" class="flex-2">
-   <img id="index--logo" src="imagens/Logo.svg">
+<body>
 
-   <div id="index--usuario" class="flex-2">
-      <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
-      <p>Usuário</p>
-      <img id="index--img-seta" src="imagens/Arrow.svg">
-   </div>
-</header>
+   <header id="index--cabecalho" class="flex-2">
+      <img id="index--logo" src="imagens/Logo.svg">
 
-<main id="index--principal">
+      <div id="index--usuario" class="flex-2">
+         <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
+         <p id="atual-usuario">Usuário</p>
+         <img id="index--img-seta" src="imagens/Arrow.svg">
+      </div>
+   </header>
 
-   <div id="cadastro--retornar">
-      <a href="index.html" style="cursor: pointer; text-decoration: none; color: #00000080;">
-         <img src="imagens/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
-         <p>Home
-      </a> / <b>Biblioteca</b></p>
-   </div>
+   <main id="index--principal">
 
-   <div id="bilbioteca--container" class="flex-1">
+      <div id="cadastro--retornar">
+         <a href="index.html" style="cursor: pointer; text-decoration: none; color: #00000080;">
+            <img src="imagens/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
+            <p>Home
+         </a> / <b>Biblioteca</b></p>
+      </div>
 
-      <form id="biblioteca--pesquisa-form">
-         <img src="imagens/Caminho 263.svg">
-         <input id="biblioteca--pesquisa-texto" placeholder="Pesquisar livro...">
-         <button id="biblioteca--pesquisa-botao">Buscar</button>
-      </form>
+      <div id="bilbioteca--container" class="flex-1">
 
-      <select id="biblioteca--pesquisa-filtro">
-         <option>Selecione</option>
-         <option>Gênero</option>
-         <option>Autor</option>
-         <option>Data de entrada</option>
-      </select>
-   </div>
-   
+         <form id="biblioteca--pesquisa-form">
+            <img src="imagens/Caminho 263.svg">
+            <input id="biblioteca--pesquisa-texto" placeholder="Pesquisar livro...">
+            <button id="biblioteca--pesquisa-botao">Buscar</button>
+         </form>
 
-</main>
+         <select id="biblioteca--pesquisa-filtro">
+            <option>Selecione</option>
+            <option>Gênero</option>
+            <option>Autor</option>
+            <option>Data de entrada</option>
+         </select>
+      </div>
+   </main>
+
+   <script>
+
+      (function () {
+         $atual_usuario = document.querySelector('#atual-usuario');
+         $atual_usuario.textContent = localStorage.getItem('atual-usuario');
+      })()
+   </script>
+</body>
 
 </html>

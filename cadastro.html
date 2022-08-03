@@ -19,7 +19,7 @@
 
       <div id="index--usuario" class="flex-2">
          <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
-         <p>Usuário</p>
+         <p id="atual-usuario">Usuário</p>
          <img id="index--img-seta" src="imagens/Arrow.svg">
       </div>
    </header>
@@ -68,10 +68,15 @@
             <button id="cadastro--botao-salvar" class="cadastro--botoes">salvar</button>
          </div>
       </div>
-
-      
-
    </main>
+
+   <script>
+      
+      (function (){
+         $atual_usuario = document.querySelector('#atual-usuario');
+         $atual_usuario.textContent = localStorage.getItem('atual-usuario');
+      })()
+   </script>
 
 </body>
 
