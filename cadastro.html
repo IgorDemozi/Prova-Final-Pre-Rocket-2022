@@ -17,11 +17,15 @@
    <header id="index--cabecalho" class="flex-2">
       <img id="index--logo" src="imagens/Logo.svg">
 
-      <div id="index--usuario" class="flex-2">
-         <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
-         <p id="atual-usuario">Usuário</p>
-         <img id="index--img-seta" src="imagens/Arrow.svg">
-      </div>
+      <section>
+         <div id="index--usuario" class="flex-2">
+            <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
+            <p id="atual-usuario">Usuário</p>
+            <img id="index--img-seta" src="imagens/Arrow.svg">
+         </div>
+
+         <div id="index--usuario-sair" style="visibility: hidden;"><p>Sair</p></div>
+      </section>
    </header>
 
    <main id="index--principal">
@@ -38,26 +42,28 @@
             <div class="flex-1" id="cadastro--nova-capa">
                <img src="imagens/Caminho 261.svg">
                <p>Capa</p>
+
+               <!-- <input id="imagem" type="file" accept="image/png, image/jpeg"> -->
             </div>
    
             <div id="cadastro--campos" class="flex-1">
                <div class="flex-coluna espaco-24px campos-area">
-                  <input class="campo-tamanho" placeholder="Título">
+                  <input id="titulo" class="campo-tamanho" placeholder="Título">
                   <textarea id="sinopse" placeholder="Sinopse"></textarea>
                </div>
    
                <div class="flex-coluna espaco-24px campos-area">
-                  <input class="campo-tamanho" placeholder="Autor">
+                  <input id="autor" class="campo-tamanho" placeholder="Autor">
    
-                  <select class="campo-tamanho">
-                     <option>Selecione</option>
+                  <select id="genero" class="campo-tamanho">
+                     <option value="">Selecione um gênero</option>
                      <option>Fantasia</option>
                      <option>Ação e Aventura</option>
                      <option>Horror</option>
                      <option>Romance</option>
                   </select>
    
-                  <input class="campo-tamanho" type="date" placeholder="Data de entrada">
+                  <input id="data" class="campo-tamanho" type="date">
                </div>
             </div>
    
@@ -70,13 +76,8 @@
       </div>
    </main>
 
-   <script>
-      
-      (function (){
-         $atual_usuario = document.querySelector('#atual-usuario');
-         $atual_usuario.textContent = localStorage.getItem('atual-usuario');
-      })()
-   </script>
+   <script src="javascript/logout.js"></script>
+   <script src="javascript/cadastro.js"></script>
 
 </body>
 

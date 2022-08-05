@@ -16,32 +16,36 @@
    <header id="index--cabecalho" class="flex-2">
       <img id="index--logo" src="imagens/Logo.svg">
 
-      <div id="index--usuario" class="flex-2">
-         <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
-         <p id="atual-usuario">Usuário</p>
-         <img id="index--img-seta" src="imagens/Arrow.svg">
-      </div>
+      <section>
+         <div id="index--usuario" class="flex-2">
+            <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
+            <p id="atual-usuario">Usuário</p>
+            <img id="index--img-seta" src="imagens/Arrow.svg">
+         </div>
+
+         <div id="index--usuario-sair" style="visibility: hidden;"><p>Sair</p></div>
+      </section>
    </header>
 
    <main id="index--principal" class="flex-1">
       <div id="index--principal-div-container" class="flex-2">
 
          <a href="cadastro.html" style="cursor: pointer; text-decoration: none;">
-         <div class="index--principal-div-menor">
-            <img class="index--principal-img" src="imagens/add_circle_FILL0_wght400_GRAD0_opsz48.svg">
-            <div>
-               <p>Cadastrar novo livro</p>
+            <div class="index--principal-div-menor">
+               <img class="index--principal-img" src="imagens/add_circle_FILL0_wght400_GRAD0_opsz48.svg">
+               <div>
+                  <p>Cadastrar novo livro</p>
+               </div>
             </div>
-         </div>
          </a>
 
          <a href="biblioteca.html" style="cursor: pointer; text-decoration: none;">
-         <div class="index--principal-div-menor" class="flex-2">
-            <img class="index--principal-img" src="imagens/import_contacts_FILL0_wght400_GRAD0_opsz48 (1).svg">
-            <div>
-               <p>Biblioteca</p>
+            <div class="index--principal-div-menor" class="flex-2">
+               <img class="index--principal-img" src="imagens/import_contacts_FILL0_wght400_GRAD0_opsz48 (1).svg">
+               <div>
+                  <p>Biblioteca</p>
+               </div>
             </div>
-         </div>
          </a>
 
          <div class="index--principal-div-menor">
@@ -53,13 +57,7 @@
       </div>
    </main>
 
-   <script>
-      
-      (function (){
-         $atual_usuario = document.querySelector('#atual-usuario');
-         $atual_usuario.textContent = localStorage.getItem('atual-usuario');
-      })()
-   </script>
+   <script src="javascript/logout.js"></script>
 
 </body>
 

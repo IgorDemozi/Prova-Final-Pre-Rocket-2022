@@ -1,5 +1,4 @@
 (function () {
-
    $email = document.querySelector('.campo-email');
    $senha = document.querySelector('.campo-senha');
    $botao_entrar = document.querySelector('#login--botao');

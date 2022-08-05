@@ -21,6 +21,10 @@ body {
    height: 96px;
 }
 
+#index--cabecalho section {
+   margin-top: 5em;
+}
+
 #index--logo {
    margin-left: 1.5em;
 }
@@ -29,6 +33,23 @@ body {
    margin-right: 1.5em;
    gap: 0.5em;
    height: 30px;
+}
+
+#index--usuario:hover {
+   cursor: pointer;
+}
+
+#index--usuario-sair {
+   background-color: #F4F4F4;
+   border-radius: 5px;
+   width: 148px;
+   height: 57px;
+   font: normal normal normal 18px/18px Roboto;
+   color: #2A2A2A;
+}
+
+#index--usuario-sair p {
+   padding: 1em 0 0 1em;
 }
 
 #index--img-avatar {

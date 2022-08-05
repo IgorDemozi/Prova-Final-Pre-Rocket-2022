@@ -18,11 +18,15 @@
    <header id="index--cabecalho" class="flex-2">
       <img id="index--logo" src="imagens/Logo.svg">
 
-      <div id="index--usuario" class="flex-2">
-         <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
-         <p id="atual-usuario">Usuário</p>
-         <img id="index--img-seta" src="imagens/Arrow.svg">
-      </div>
+      <section>
+         <div id="index--usuario" class="flex-2">
+            <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
+            <p id="atual-usuario">Usuário</p>
+            <img id="index--img-seta" src="imagens/Arrow.svg">
+         </div>
+
+         <div id="index--usuario-sair" style="visibility: hidden;"><p>Sair</p></div>
+      </section>
    </header>
 
    <main id="index--principal">
@@ -51,13 +55,7 @@
       </div>
    </main>
 
-   <script>
-
-      (function () {
-         $atual_usuario = document.querySelector('#atual-usuario');
-         $atual_usuario.textContent = localStorage.getItem('atual-usuario');
-      })()
-   </script>
+   <script src="javascript/logout.js"></script>
 </body>
 
 </html>
