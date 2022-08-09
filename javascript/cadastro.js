@@ -1,5 +1,8 @@
 (function () {
 
+   $imagem = document.querySelector('#imagem');
+   $img_tag = document.querySelector('#img-tag');
+   $img_txt = document.querySelector('#cadastro--nova-capa-texto');
    $titulo = document.querySelector('#titulo');
    $sinopse = document.querySelector('#sinopse');
    $autor = document.querySelector('#autor');
@@ -16,7 +19,7 @@
       dados = body.data;
    });
 
-   $salvar.addEventListener('click', function salvar() {
+   $salvar.addEventListener('click', function salvar(e) {
 
       if ($titulo.value == '' || $sinopse.value == '' || $autor.value == '' 
       || $genero.value == '' || $data.value == ''){
@@ -24,19 +27,22 @@
          return;
       }
 
+      var data = $data.value;
+      data = data.split("-").reverse().join("/");
+
       dados.books.push({ title: $titulo.value,
                          author:$autor.value,
                          genre: $genero.value,
                          status:{isActive: true, description:''},
                          image:'',
-                         systemEntryDate: $data.value,
+                         systemEntryDate: data,
                          synopsis: $sinopse.value,
                          rentHistory: []
-      })
+      });
 
       var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
 
-      const save = async () => {
+      const salvar = async () => {
          const criar = await showSaveFilePicker({
             suggestedName: 'data.json',
 
@@ -50,6 +56,38 @@
          await escrever.close();
       }
 
-      save();
+      salvar();
+
+      e.preventDefault();
    });
+
+   $cancelar.addEventListener('click', function limpar() {
+      $imagem.value = '';
+      $img_tag.setAttribute('src', 'imagens/Caminho 261.svg');
+      $img_txt.removeAttribute('style');
+      $titulo.value = '';
+      $sinopse.value = '',
+      $autor.value = '',
+      $genero.value = '',
+      $data.value = '';
+   });
+
+   $imagem.addEventListener('change', function carregarImagem() {
+
+      var leitor = new FileReader();
+
+      leitor.onloadend = function () {
+         $img_tag.src = leitor.result;
+      }
+
+      if ($imagem.files[0]) {
+         leitor.readAsDataURL($imagem.files[0]);
+      } else {
+         $img_tag.src = "";
+      }
+
+      $img_txt.setAttribute('style', 'display:none;');
+
+   })
+
 })()

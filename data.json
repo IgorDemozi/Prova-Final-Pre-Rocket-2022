@@ -22,7 +22,7 @@
 				"isActive": false,
 				"description": "desativado porque estragou"
 			},
-			"image": "./assets/livro01.png",
+			"image": "/dados/assets/livro01.png",
 			"systemEntryDate": "02/01/2020",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": [
@@ -48,7 +48,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro02.png",
+			"image": "/dados/assets/livro02.png",
 			"systemEntryDate": "02/01/2020",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -61,7 +61,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro03.png",
+			"image": "/dados/assets/livro03.png",
 			"systemEntryDate": "04/12/2019",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -74,7 +74,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro04.png",
+			"image": "/dados/assets/livro04.png",
 			"systemEntryDate": "06/12/2004",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -87,7 +87,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro05.png",
+			"image": "/dados/assets/livro05.png",
 			"systemEntryDate": "02/04/2018",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -100,7 +100,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro06.png",
+			"image": "/dados/assets/livro06.png",
 			"systemEntryDate": "08/04/2019",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -113,7 +113,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro07.png",
+			"image": "/dados/assets/livro07.png",
 			"systemEntryDate": "01/07/2021",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -126,7 +126,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro08.png",
+			"image": "/dados/assets/livro08.png",
 			"systemEntryDate": "20/01/2022",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -139,7 +139,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro09.png",
+			"image": "/dados/assets/livro09.png",
 			"systemEntryDate": "12/06/2019",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -152,7 +152,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro10.png",
+			"image": "/dados/assets/livro10.png",
 			"systemEntryDate": "13/02/2017",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -165,7 +165,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro11.png",
+			"image": "/dados/assets/livro11.png",
 			"systemEntryDate": "29/12/2021",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -178,7 +178,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro12.png",
+			"image": "/dados/assets/livro12.png",
 			"systemEntryDate": "14/07/2020",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -191,7 +191,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro13.png",
+			"image": "/dados/assets/livro13.png",
 			"systemEntryDate": "12/04/2019",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -204,7 +204,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro14.png",
+			"image": "/dados/assets/livro14.png",
 			"systemEntryDate": "11/06/2017",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -217,7 +217,7 @@
 				"isActive": true,
 				"description": ""
 			},
-			"image": "./assets/livro15.png",
+			"image": "/dados/assets/livro15.png",
 			"systemEntryDate": "22/09/2020",
 			"synopsis": "Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Quem num gosta di mé, boa gentis num é.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.",
 			"rentHistory": []
@@ -231,7 +231,7 @@
 				"description": ""
 			},
 			"image": "",
-			"systemEntryDate": "2022-08-11",
+			"systemEntryDate": "11/08/2022",
 			"synopsis": "ABLABLABLEBLUBLEBLE",
 			"rentHistory": []
 		},
@@ -244,7 +244,7 @@
 				"description": ""
 			},
 			"image": "",
-			"systemEntryDate": "2022-08-04",
+			"systemEntryDate": "04/08/2022",
 			"synopsis": "após ter seu tornado nerfado, taz retorna ao campo de batalha buscando provar o seu valor",
 			"rentHistory": []
 		},
@@ -257,7 +257,7 @@
 				"description": ""
 			},
 			"image": "",
-			"systemEntryDate": "2022-08-14",
+			"systemEntryDate": "14/08/2022",
 			"synopsis": "xxxxx",
 			"rentHistory": []
 		},
@@ -270,7 +270,7 @@
 				"description": ""
 			},
 			"image": "",
-			"systemEntryDate": "2022-08-14",
+			"systemEntryDate": "14/08/2022",
 			"synopsis": "bbbbb",
 			"rentHistory": []
 		}

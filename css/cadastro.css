@@ -12,6 +12,16 @@
    height: 200px;
    width: 172px;
    gap: 0.5em;
+   cursor: pointer;
+}
+
+#cadastro--nova-capa input {
+   display: none;
+}
+
+#img-tag {
+   max-height: 200px;
+   max-width: 172px;
 }
 
 #cadastro--super-container {

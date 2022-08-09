@@ -1,3 +1,5 @@
+.alinha-eixo-y {}
+
 #bilbioteca--container {
    margin-top: 2em;
    gap: 2em;
@@ -30,6 +32,7 @@
    border-radius: 5px;
    width: 82px;
    height: 37px;
+   cursor: pointer;
 }
 
 #biblioteca--pesquisa-filtro {
@@ -39,4 +42,46 @@
    padding: 0 1em;
    border-radius: 5px;
    font: normal normal normal 16px/21px Roboto;
+}
+
+#biblioteca--itens {
+   height: 58%;
+   width: 84%;
+   margin: 2em auto 0 auto;
+   overflow-y: scroll;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1em;
+}
+
+.item {
+   width: 200px;
+   height: 240px;
+   background-color: #F4F4F4;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 1.5em;
+}
+
+.item span:nth-child(2) {
+   width: 200px;
+   margin-top: 6px;
+}
+
+.item img {
+   height: 180px;
+   width: 120px;
+}
+
+.item p {
+   text-align: center;
+   margin: 0;
+   font: normal normal medium 16px/21px Roboto;
+   color: #3E4756;
+}
+
+.invisivel {
+   visibility:hidden;
 }
