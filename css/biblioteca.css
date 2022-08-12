@@ -1,5 +1,3 @@
-.alinha-eixo-y {}
-
 #bilbioteca--container {
    margin-top: 2em;
    gap: 2em;
@@ -48,7 +46,6 @@
    height: 58%;
    width: 84%;
    margin: 2em auto 0 auto;
-   overflow-y: scroll;
    display: flex;
    flex-wrap: wrap;
    gap: 1em;
@@ -63,6 +60,7 @@
    flex-direction: column;
    align-items: center;
    padding-top: 1.5em;
+   cursor: pointer;
 }
 
 .item span:nth-child(2) {
@@ -83,5 +81,244 @@
 }
 
 .invisivel {
-   visibility:hidden;
+   visibility: hidden;
+}
+
+
+/* MENU DO LIVRO*/
+
+
+#biblioteca--menu-livro {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+   background-color: white;
+   width: 700px;
+   height: fit-content;
+   padding: 1.5em;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 0.8em;
+}
+
+#livro--div-fechar {
+   width: 100%;
+   height: 1em;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+#livro--fechar-menu {
+   cursor: pointer;
+   width: 1em;
+}
+
+#livro--div-capa {
+   width: 244px;
+   height: 350px;
+}
+
+#livro-capa {
+   width: 100%;
+   height: 100%;
+}
+
+#livro-informacoes {
+   width: 400px;
+   height: 350px;
+}
+
+#livro-informacoes p {
+   margin: 0.5em 0 1.5em 0;
+   color: #3E4756;
+}
+
+#livro--botao-emprestar {
+   background-color: #FFC501;
+   height: 3.8em;
+   width: 244px;
+   border: 1px solid #ADB5BD;
+   border-radius: 5px;
+   background-image: url(/imagens/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).svg);
+   background-repeat: no-repeat;
+   background-position: 34% 44%;
+   background-size: 1.3em;
+   padding-left: 2.5em;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+#livro--div-botoes {
+   width: 430px;
+   height: 50.66px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1.5em;
+}
+
+h1 {
+   margin: 0;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+   font-family: Roboto;
+   color: #3E4756;
+   margin-bottom: 1em;
+}
+
+h2 {
+   margin: 0;
+   font-weight: bold;
+   font-size: 16px;
+   font-family: Roboto;
+   color: #3E4756;
+}
+
+#livro-sinopse {
+   width: 90%;
+   height: 57.2px;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   word-break: break-word;
+   overflow-y: hidden;
+}
+
+#livro--div-botoes button {
+   padding: 1.2em;
+   border-radius: 5px;
+   background-color: white;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+#livro--botao-editar {
+   border: 1px solid #167CE2;
+   color: #167CE2;
+}
+
+#livro--botao-inativar {
+   border: 1px solid #ED5E5E;
+   color: #ED5E5E;
+}
+
+#livro--botao-historico {
+   border: 1px solid #ADB5BD;
+}
+
+#livro--informacoes-do-emprestimo {
+   border: 1px solid black;
+   width: 100%;
+   height: fit-content;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 1em;
+}
+
+#informacoes-div-1 {
+   width: 100%;
+}
+
+#informacoes-div-1 h1 {
+   text-align: left;
+   margin: 0;
+}
+
+#informacoes-div-2 {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: #F4F4F4;
+   width: 100%;
+   height: 80px;
+   padding: 0 1em;
+}
+
+#informacoes-div-2 h2 {
+   text-align: left;
+}
+
+#informacoes-div-2 p {
+   margin: 0.5em 0 0 0;
+   text-align: left;
+   font: normal normal 300 16px/21px Roboto;
+   letter-spacing: 0px;
+   color: #3E4756;
+}
+
+
+/* MENU EMPRESTAR */
+
+
+#menu-emprestar {
+   position: fixed;
+   background-color: white;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+   width: 610px;
+   height: 250px;
+   padding: 2em;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1em;
+}
+
+#menu-emprestar--div-fechar {
+   width: 100%;
+   height: 1em;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+#menu-emprestar--fechar-menu {
+   position: relative;
+   left: 0.8em;
+   top: -0.8em;
+   cursor: pointer;
+}
+
+#menu-emprestar div:nth-child(2) {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 1em;
+}
+
+#menu-emprestar fieldset legend {
+   font: normal normal medium 20px/26px Roboto;
+   letter-spacing: 0px;
+   color: #3E4756;
+}
+
+#menu-emprestar input {
+   height: 3.5em;
+   width: 20em;
+   padding: 0 1em;
+   border-radius: 5px;
+   border: 1px solid #133052;
+}
+
+#menu-emprestar--botao-emprestar {
+   background-color: #FFC501;
+   height: 3.8em;
+   width: 244px;
+   border: 1px solid #ADB5BD;
+   border-radius: 5px;
+   background-image: url(/imagens/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).svg);
+   background-repeat: no-repeat;
+   background-position: 34% 44%;
+   background-size: 1.3em;
+   padding-left: 2.5em;
+   font-weight: bold;
+   cursor: pointer;
+   align-self: flex-end;
 }

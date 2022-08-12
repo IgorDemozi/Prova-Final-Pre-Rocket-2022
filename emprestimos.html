@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+   <title>Página principal</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/cadastro.css">
+   <link rel="stylesheet" href="css/emprestimos.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+   <header id="index--cabecalho" class="flex-2">
+      <img id="index--logo" src="imagens/Logo.svg">
+
+      <section>
+         <div id="index--usuario" class="flex-2">
+            <img id="index--img-avatar" src="imagens/person_black_24dp (1).svg">
+            <p id="atual-usuario">Usuário</p>
+            <img id="index--img-seta" src="imagens/Arrow.svg">
+         </div>
+
+         <div id="index--usuario-sair" style="visibility: hidden;"><p>Sair</p></div>
+      </section>
+   </header>
+
+   <main id="index--principal">
+
+      <div id="cadastro--retornar">
+         <a href="index.html" style="cursor: pointer; text-decoration: none; color: #00000080;">
+            <img src="imagens/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
+            <p>Home
+         </a> / <b>Empréstimos</b></p>
+      </div>
+
+      <table>
+         <thead>
+            <tr>
+               <th>Aluno</th>
+               <th>Turma</th>
+               <th>Livro</th>
+               <th>Data da Retirada</th>
+               <th>Data da Entrega</th>
+            </tr>
+         </thead>
+   
+         <tbody id="emprestimos--tabela">
+            <tr id="tr-filtros">
+               <td><input id="filtro-aluno"></td>
+               <td><input id="filtro-turma"></td>
+               <td><input id="filtro-livro"></td>
+               <td><input id="filtro-retirada" maxlength="10" type="text"></td>
+               <td><input id="filtro-entrega" maxlength="10" type="text"></td>
+            </tr>
+         </tbody>
+      </table>
+      
+   </main>
+
+   <script src="javascript/logout.js"></script>
+   <script src="javascript/emprestimos.js"></script>
+
+</body>
+
+</html>

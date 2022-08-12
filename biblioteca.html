@@ -25,11 +25,92 @@
             <img id="index--img-seta" src="imagens/Arrow.svg">
          </div>
 
-         <div id="index--usuario-sair" style="visibility: hidden;"><p>Sair</p></div>
+         <div id="index--usuario-sair" style="visibility: hidden;">
+            <p>Sair</p>
+         </div>
       </section>
    </header>
 
    <main id="index--principal">
+
+      <section id="biblioteca--menu-livro">
+         <div id="livro--div-fechar">
+            <img src="/imagens/Caminho 265.svg" id="livro--fechar-menu">
+         </div>
+
+         <div id="livro--div-capa">
+            <img id="livro-capa">
+         </div>
+
+         <div id="livro-informacoes">
+            <h1 id="livro-titulo">titulo</h1>
+            <h2>Sinopse</h2>
+            <p id="livro-sinopse">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+               in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Autor</h2>
+            <p id="livro-autor">autor</p>
+            <h2>Gênero</h2>
+            <p id="livro-genero">genero</p>
+            <h2>Data de entrada</h2>
+            <p id="livro-entrada">entrada</p>
+         </div>
+
+         <button id="livro--botao-emprestar">Emprestar</button>
+
+         <div id="livro--div-botoes">
+            <button id="livro--botao-editar">Editar</button>
+            <button id="livro--botao-inativar">Inativar</button>
+            <button id="livro--botao-historico">Histórico</button>
+         </div>
+
+         <div id="livro--informacoes-do-emprestimo">
+
+            <div id="informacoes-div-1"><h1>Dados do Aluno</1h></div>
+         
+            <div id="informacoes-div-2">
+               <div>
+                  <h2>Nome do aluno</h2>
+                  <p>nome</p>
+               </div>
+
+               <div>
+                  <h2>Turma</h2>
+                  <p>turma</p>
+               </div>
+
+               <div>
+                  <h2>Data da retirada</h2>
+                  <p>retirada</p>
+               </div>
+
+               <div>
+                  <h2>Data de devolução</h2>
+                  <p>devolução</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="menu-emprestar" style="display: none;">
+         <div id="menu-emprestar--div-fechar">
+            <h1>Informe os dados do aluno antes de continuar</h1>
+            <img src="/imagens/Caminho 265.svg" id="menu-emprestar--fechar-menu">
+         </div>
+
+         <div>
+            <input id="menu-emprestar--aluno" type="text" placeholder="Nome do aluno">
+            <input id="menu-emprestar--turma" type="text" placeholder="Turma">
+            <input id="menu-emprestar--retirada" type="text" placeholder="Data de Retirada" onfocus="(this.type='date')"
+               onblur="(this.type='text')">
+            <input id="menu-emprestar--devolucao" type="text" placeholder="Data de Devolução"
+               onfocus="(this.type='date')" onblur="(this.type='text')">
+         </div>
+
+         <button id="menu-emprestar--botao-emprestar">Emprestar</button>
+      </section>
 
       <div id="cadastro--retornar">
          <a href="index.html" style="cursor: pointer; text-decoration: none; color: #00000080;">

@@ -21,8 +21,8 @@
 
    $salvar.addEventListener('click', function salvar(e) {
 
-      if ($titulo.value == '' || $sinopse.value == '' || $autor.value == '' 
-      || $genero.value == '' || $data.value == ''){
+      if ($titulo.value == '' || $sinopse.value == '' || $autor.value == ''
+         || $genero.value == '' || $data.value == '') {
          alert('Preencha todos os campos');
          return;
       }
@@ -30,33 +30,40 @@
       var data = $data.value;
       data = data.split("-").reverse().join("/");
 
-      dados.books.push({ title: $titulo.value,
-                         author:$autor.value,
-                         genre: $genero.value,
-                         status:{isActive: true, description:''},
-                         image:'',
-                         systemEntryDate: data,
-                         synopsis: $sinopse.value,
-                         rentHistory: []
-      });
+      var leitor = new FileReader();
+      leitor.readAsDataURL($imagem.files[0]);
 
-      var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
+      leitor.onloadend = function (){
 
-      const salvar = async () => {
-         const criar = await showSaveFilePicker({
-            suggestedName: 'data.json',
-
-            types: [{
-              description: 'JSON',
-              accept: {'application/json': ['.json'], },
-            }],
+         dados.books.push({
+            title: $titulo.value,
+            author: $autor.value,
+            genre: $genero.value,
+            status: { isActive: true, description: '' },
+            image: leitor.result,
+            systemEntryDate: data,
+            synopsis: $sinopse.value,
+            rentHistory: []
          });
-         const escrever = await criar.createWritable();
-         await escrever.write(a);
-         await escrever.close();
-      }
 
-      salvar();
+         var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
+
+         const salvar = async () => {
+            const criar = await showSaveFilePicker({
+               suggestedName: 'data.json',
+   
+               types: [{
+                  description: 'JSON',
+                  accept: { 'application/json': ['.json'], },
+               }],
+            });
+            const escrever = await criar.createWritable();
+            await escrever.write(a);
+            await escrever.close();
+         }
+   
+         salvar();
+      }
 
       e.preventDefault();
    });
@@ -67,9 +74,9 @@
       $img_txt.removeAttribute('style');
       $titulo.value = '';
       $sinopse.value = '',
-      $autor.value = '',
-      $genero.value = '',
-      $data.value = '';
+         $autor.value = '',
+         $genero.value = '',
+         $data.value = '';
    });
 
    $imagem.addEventListener('change', function carregarImagem() {
@@ -83,7 +90,7 @@
       if ($imagem.files[0]) {
          leitor.readAsDataURL($imagem.files[0]);
       } else {
-         $img_tag.src = "";
+         $img_tag.src = "imagens/Caminho 261.svg";
       }
 
       $img_txt.setAttribute('style', 'display:none;');
