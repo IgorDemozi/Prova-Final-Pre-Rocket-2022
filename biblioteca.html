@@ -33,7 +33,7 @@
 
    <main id="index--principal">
 
-      <section id="biblioteca--menu-livro">
+      <section id="biblioteca--menu-livro" style="display: none;">
          <div id="livro--div-fechar">
             <img src="/imagens/Caminho 265.svg" id="livro--fechar-menu">
          </div>
@@ -58,7 +58,8 @@
             <p id="livro-entrada">entrada</p>
          </div>
 
-         <button id="livro--botao-emprestar">Emprestar</button>
+         <button id="livro--botao-emprestar" >Emprestar</button>
+         <button id="livro--botao-devolver" style="display: none;">Devolver</button>
 
          <div id="livro--div-botoes">
             <button id="livro--botao-editar">Editar</button>
@@ -66,35 +67,34 @@
             <button id="livro--botao-historico">Histórico</button>
          </div>
 
-         <div id="livro--informacoes-do-emprestimo">
-
+         <div id="livro--informacoes-do-emprestimo" style="display: none;">
             <div id="informacoes-div-1"><h1>Dados do Aluno</1h></div>
          
             <div id="informacoes-div-2">
                <div>
                   <h2>Nome do aluno</h2>
-                  <p>nome</p>
+                  <p id="emprestimo-nome">nome</p>
                </div>
 
                <div>
                   <h2>Turma</h2>
-                  <p>turma</p>
+                  <p id="emprestimo-turma">turma</p>
                </div>
 
                <div>
                   <h2>Data da retirada</h2>
-                  <p>retirada</p>
+                  <p id="emprestimo-retirada">retirada</p>
                </div>
 
                <div>
                   <h2>Data de devolução</h2>
-                  <p>devolução</p>
+                  <p id="emprestimo-devolucao">devolução</p>
                </div>
             </div>
          </div>
       </section>
 
-      <section id="menu-emprestar" style="display: none;">
+      <section id="menu-emprestar" style="display:none;">
          <div id="menu-emprestar--div-fechar">
             <h1>Informe os dados do aluno antes de continuar</h1>
             <img src="/imagens/Caminho 265.svg" id="menu-emprestar--fechar-menu">

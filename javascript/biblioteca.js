@@ -14,6 +14,8 @@
    var $livro_genero = document.querySelector('#livro-genero');
    var $livro_entrada = document.querySelector('#livro-entrada');
    var $bt_emprestar = document.querySelector('#livro--botao-emprestar');
+   var $bt_devolver = document.querySelector('#livro--botao-devolver');
+   var $informacoes = document.querySelector("#livro--informacoes-do-emprestimo");
 
    var $bt_fechar_emprestimo = document.querySelector('#menu-emprestar--fechar-menu');
    var $menu_emprestar = document.querySelector('#menu-emprestar');
@@ -23,9 +25,21 @@
    var $retirada = document.querySelector('#menu-emprestar--retirada');
    var $devolucao = document.querySelector('#menu-emprestar--devolucao');
 
+   var $emprestimo_nome = document.querySelector('#emprestimo-nome');
+   var $emprestimo_turma = document.querySelector('#emprestimo-turma');
+   var $emprestimo_retirada = document.querySelector('#emprestimo-retirada');
+   var $emprestimo_devolucao = document.querySelector('#emprestimo-devolucao');
+
    var dados;
    var lista = [];
+   var emprestados = JSON.parse(localStorage.getItem('livros-emprestados'));
    var index = 0;
+
+   if (emprestados === null) {
+      emprestados = [];
+   }
+
+   console.log(emprestados);
 
    fetch('./data.json').then(response => {
       return response.json();
@@ -43,14 +57,7 @@
       $menu_emprestar.removeAttribute('style');
    });
 
-   $bt_fechar_emprestimo.addEventListener('click', function fecharMenu() {
-      $menu_emprestar.setAttribute('style', 'display: none;');
-      $aluno.value = '';
-      $turma.value = '';
-      $retirada.value = '';
-      $devolucao.value = ''
-      $menu.removeAttribute('style');
-   });
+   $bt_fechar_emprestimo.addEventListener('click', fecharMenuEmprestar);
 
    $bt_emprestar_2.addEventListener('click', function emprestar(e) {
 
@@ -60,7 +67,7 @@
       }
 
       var data_r = $retirada.value;
-      var data_d = $retirada.value;
+      var data_d = $devolucao.value;
       data_r = data_r.split("-").reverse().join("/");
       data_d = data_d.split("-").reverse().join("/");
 
@@ -84,13 +91,42 @@
          });
          const escrever = await criar.createWritable();
          await escrever.write(a);
+
+         emprestados.push(index.toString());
+         localStorage.setItem('livros-emprestados', JSON.stringify(emprestados));
+
+         $emprestimo_nome.textContent = $aluno.value;
+         $emprestimo_turma.textContent = $turma.value;
+         $emprestimo_retirada.textContent = data_r;
+         $emprestimo_devolucao.textContent = data_d;
+
+         $bt_emprestar.setAttribute('style', 'display:none;');
+         $bt_devolver.removeAttribute('style');
+         $informacoes.removeAttribute('style');
+
+         fecharMenuEmprestar();
+
          await escrever.close();
+
+         e.preventDefault();
       }
 
       salvar();
-      
+
       e.preventDefault();
    });
+
+   $bt_devolver.addEventListener('click', function () {
+
+      if (window.confirm("Confirmar devolução?")) {
+         emprestados.splice(emprestados.indexOf(index.toString()));
+         localStorage.setItem('livros-emprestados', JSON.stringify(emprestados));
+
+         $bt_emprestar.removeAttribute('style');
+         $bt_devolver.setAttribute('style', 'display:none;');
+         $informacoes.setAttribute('style', 'display:none;');
+      }
+   })
 
    $bt_buscar.addEventListener('click', function buscar(e) {
 
@@ -160,6 +196,27 @@
          $livro_autor.textContent = item.author;
          $livro_genero.textContent = item.genre;
          $livro_entrada.textContent = item.systemEntryDate;
-      })
+         
+         
+         if (emprestados != null && emprestados.includes(index)) {
+            $bt_emprestar.setAttribute('style', 'display:none;');
+            $bt_devolver.removeAttribute('style');
+            $informacoes.removeAttribute('style');
+            
+            $emprestimo_nome.textContent = item.rentHistory[item.rentHistory.length - 1].studentName;
+            $emprestimo_turma.textContent = item.rentHistory[item.rentHistory.length - 1].class;
+            $emprestimo_retirada.textContent = item.rentHistory[item.rentHistory.length - 1].withdrawalDate;
+            $emprestimo_devolucao.textContent = item.rentHistory[item.rentHistory.length - 1].deliveryDate;
+         }
+      });
    }
+
+   function fecharMenuEmprestar() {
+      $menu_emprestar.setAttribute('style', 'display: none;');
+      $aluno.value = '';
+      $turma.value = '';
+      $retirada.value = '';
+      $devolucao.value = ''
+      $menu.removeAttribute('style');
+   };
 })()

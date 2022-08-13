@@ -2,6 +2,10 @@ p {
    margin: 0;
 }
 
+section {
+   height: 105px;
+}
+
 #cadastro--retornar {
    height: 51px;
 }

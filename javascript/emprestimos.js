@@ -8,7 +8,8 @@
    $entrega = document.querySelector('#filtro-entrega');
 
    var dados;
-   var lista = [];
+   var emprestimos = [];
+   var titulos = [];
 
    fetch('./data.json').then(response => {
       return response.json();
@@ -16,9 +17,12 @@
       dados = body.data;
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
+
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
    });
 
    $aluno.addEventListener('input', function () {
@@ -26,10 +30,15 @@
       limparTela();
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
 
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
+
+      console.log(emprestimos);
+      console.log(titulos);
    });
 
    $turma.addEventListener('input', function () {
@@ -37,9 +46,12 @@
       limparTela();
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
+
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
 
    });
 
@@ -48,9 +60,12 @@
       limparTela();
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
+
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
 
    });
 
@@ -59,9 +74,12 @@
       limparTela();
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
+
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
 
    });
 
@@ -70,15 +88,19 @@
       limparTela();
 
       dados.books.forEach(item => {
-         preencherTela(item, $aluno.value, $turma.value, $livro.value,
+         preencherLista(item, $aluno.value, $turma.value, $livro.value,
             $retirada.value, $entrega.value);
       });
+
+      preencherTela($aluno.value, $turma.value, $livro.value,
+         $retirada.value, $entrega.value);
 
    });
 
    function limparTela() {
 
-      lista = [];
+      emprestimos = [];
+      titulos = [];
 
       var elementos = document.querySelectorAll('tr');
       for (var i = 2; i < elementos.length; i++) {
@@ -86,15 +108,15 @@
       }
    }
 
-   function preencherTela(item, aluno, turma, livro, retirada, entrega) {
+   function preencherLista(item, aluno, turma, livro, retirada, entrega) {
 
-      if (item.rentHistory != '') {
+      if (item.rentHistory.length > 0) {
 
          var aluno = aluno.toLowerCase();
          var turma = turma.toString().toLowerCase();
          var livro = livro.toLowerCase();
          var retirada = retirada.toString();
-         var entrega = entrega.toString();;
+         var entrega = entrega.toString();
 
          item.rentHistory.forEach(emprestimo => {
             if (emprestimo.studentName.toLowerCase().includes(aluno) &&
@@ -102,35 +124,43 @@
                item.title.toLowerCase().includes(livro) &&
                emprestimo.withdrawalDate.includes(retirada) &&
                emprestimo.deliveryDate.includes(entrega)) {
-               lista.push(emprestimo);
+               emprestimos.push(emprestimo);
+               titulos.push(item.title);
             }
-         })
-
-         lista.forEach(emprestimo => {
-
-            var $nova_linha = document.createElement('tr');
-            $tabela.appendChild($nova_linha);
-
-            var $nova_coluna_aluno = document.createElement('td');
-            $nova_coluna_aluno.innerHTML = '<p>' + emprestimo.studentName + '</p>';
-            $nova_linha.appendChild($nova_coluna_aluno);
-
-            var $nova_coluna_turma = document.createElement('td');
-            $nova_coluna_turma.innerHTML = '<p>' + emprestimo.class + '</p>';
-            $nova_linha.appendChild($nova_coluna_turma);
-
-            var $nova_coluna_livro = document.createElement('td');
-            $nova_coluna_livro.innerHTML = '<p>' + item.title + '</p>';
-            $nova_linha.appendChild($nova_coluna_livro);
-
-            var $nova_coluna_retirada = document.createElement('td');
-            $nova_coluna_retirada.innerHTML = '<p>' + emprestimo.withdrawalDate + '</p>';
-            $nova_linha.appendChild($nova_coluna_retirada);
-
-            var $nova_coluna_entrega = document.createElement('td');
-            $nova_coluna_entrega.innerHTML = '<p>' + emprestimo.deliveryDate + '</p>';
-            $nova_linha.appendChild($nova_coluna_entrega);
          });
       }
+   }
+
+   function preencherTela() {
+
+      var i=0;
+
+      emprestimos.forEach(elemento => {
+
+         var $nova_linha = document.createElement('tr');
+         $tabela.appendChild($nova_linha);
+
+         var $nova_coluna_aluno = document.createElement('td');
+         $nova_coluna_aluno.innerHTML = '<p>' + elemento.studentName + '</p>';
+         $nova_linha.appendChild($nova_coluna_aluno);
+
+         var $nova_coluna_turma = document.createElement('td');
+         $nova_coluna_turma.innerHTML = '<p>' + elemento.class + '</p>';
+         $nova_linha.appendChild($nova_coluna_turma);
+
+         var $nova_coluna_livro = document.createElement('td');
+         $nova_coluna_livro.innerHTML = '<p>' + titulos[i] + '</p>';
+         $nova_linha.appendChild($nova_coluna_livro);
+
+         var $nova_coluna_retirada = document.createElement('td');
+         $nova_coluna_retirada.innerHTML = '<p>' + elemento.withdrawalDate + '</p>';
+         $nova_linha.appendChild($nova_coluna_retirada);
+
+         var $nova_coluna_entrega = document.createElement('td');
+         $nova_coluna_entrega.innerHTML = '<p>' + elemento.deliveryDate + '</p>';
+         $nova_linha.appendChild($nova_coluna_entrega);
+
+         i++;
+      });
    }
 })()

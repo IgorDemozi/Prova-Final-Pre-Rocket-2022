@@ -18,7 +18,7 @@
          $sair.setAttribute('style', 'cursor: pointer;');
 
          $sair.addEventListener('click', function sair() {
-            localStorage.clear();
+            localStorage.setItem('atual-usuario', null);
             window.location.href = './login.html';
          })
 
