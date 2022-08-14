@@ -1,11 +1,11 @@
 (function () {
 
-   $tabela = document.querySelector('#emprestimos--tabela');
-   $aluno = document.querySelector('#filtro-aluno');
-   $turma = document.querySelector('#filtro-turma');
-   $livro = document.querySelector('#filtro-livro');
-   $retirada = document.querySelector('#filtro-retirada');
-   $entrega = document.querySelector('#filtro-entrega');
+   var $tabela = document.querySelector('#emprestimos--tabela');
+   var $aluno = document.querySelector('#filtro-aluno');
+   var $turma = document.querySelector('#filtro-turma');
+   var $livro = document.querySelector('#filtro-livro');
+   var $retirada = document.querySelector('#filtro-retirada');
+   var $entrega = document.querySelector('#filtro-entrega');
 
    var dados;
    var emprestimos = [];

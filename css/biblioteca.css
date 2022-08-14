@@ -49,6 +49,7 @@
    display: flex;
    flex-wrap: wrap;
    gap: 1em;
+   padding-bottom: 1.5em;
 }
 
 .item {
@@ -152,6 +153,10 @@
    cursor: pointer;
 }
 
+#livro--botao-emprestar:disabled {
+   background-color: #f3e0a0;
+}
+
 #livro--botao-devolver {
    background-color: #F4F4F4;
    height: 3.8em;
@@ -206,6 +211,16 @@ h2 {
    overflow-y: hidden;
 }
 
+.formatacao {
+   width: 90%;
+   height: 57.2px;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   word-break: break-word;
+   overflow-y: hidden;
+   margin: 0;
+}
+
 #livro--div-botoes button {
    padding: 1.2em;
    border-radius: 5px;
@@ -224,11 +239,26 @@ h2 {
    color: #ED5E5E;
 }
 
+#livro--botao-ativar {
+   border: 1px solid #49D749;
+   color: #49D749;
+}
+
 #livro--botao-historico {
    border: 1px solid #ADB5BD;
 }
 
 #livro--informacoes-do-emprestimo {
+   width: 100%;
+   height: fit-content;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 1em;
+   margin-top: 1em;
+}
+
+#livro--informacoes-da-inatavacao {
    width: 100%;
    height: fit-content;
    display: flex;
@@ -339,4 +369,136 @@ h2 {
    font-weight: bold;
    cursor: pointer;
    align-self: flex-end;
+}
+
+
+/* MENU INATIVAR */
+
+
+#menu-inativar {
+   position: fixed;
+   background-color: white;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+   width: 580px;
+   height: 200px;
+   padding: 2em;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1em;
+}
+
+#menu-inativar--div-fechar {
+   width: 100%;
+   height: 1em;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+#menu-inativar--fechar-menu {
+   position: relative;
+   left: 0.8em;
+   top: -0.8em;
+   cursor: pointer;
+}
+
+#inativar--motivo {
+   height: 100px;
+   border: 1px solid #133052;
+   border-radius: 5px;
+   padding: 1em;
+}
+
+#inativar--botao {
+   padding: 1.2em;
+   border-radius: 5px;
+   background-color: white;
+   font-weight: bold;
+   cursor: pointer;
+   border: 1px solid #ED5E5E;
+   color: #ED5E5E;
+   align-self: flex-end;
+}
+
+
+/* MENU HISTORICO */
+
+
+#menu-historico {
+   position: fixed;
+   background-color: white;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+   width: fit-content;
+   height: fit-content;
+   padding: 2em;
+}
+
+#menu-historico--div-fechar {
+   width: 100%;
+   height: 2em;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+#menu-historico--fechar-menu {
+   position: relative;
+   left: 0.8em;
+   top: -1.2em;
+   cursor: pointer;
+}
+
+table {
+   border-collapse: collapse;
+   width: 680px;
+   margin: auto;
+   margin-top: 2em;
+}
+
+th {
+   background: #FFC501;
+   height: 2em;
+   text-align: left;
+   padding-left: 2em;
+}
+
+tr th:nth-child(1) {
+   border-radius: 5px 1px 1px 1px;
+}
+
+tr th:last-child {
+   border-radius: 1px 5px 1px 1px;
+}
+
+td {
+   border-bottom: 1px solid #CDCDCD;
+   padding: 10px;
+   text-align: left;
+   padding-left: 2em;
+}
+
+#tr-filtros input {
+   border: none;
+   border-bottom: 2px solid black;
+   width: 110px;
+   background-image: url(../imagens/Caminho\ 147.svg);
+   background-repeat: no-repeat;
+   background-position: 2% 1%;
+   background-size: 1.3em;
+   padding-left: 2em;
+}
+
+#tr-filtros input:focus {
+   outline: none;
+}
+
+#historico--tabela p {
+   margin: 0;
 }

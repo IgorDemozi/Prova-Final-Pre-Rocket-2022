@@ -12,6 +12,8 @@
    $salvar = document.querySelector('#cadastro--botao-salvar');
 
    var dados;
+   var idDoLivro = JSON.parse(localStorage.getItem('id-do-livro'));
+   idDoLivro = parseInt(idDoLivro);
 
    fetch('./data.json').then(response => {
       return response.json();
@@ -19,7 +21,29 @@
       dados = body.data;
    });
 
-   $salvar.addEventListener('click', function salvar(e) {
+   var livroParaEditar = JSON.parse(localStorage.getItem('livro-para-editar'));
+
+   if (document.URL.includes('editar.html')) {
+
+      var data = livroParaEditar.systemEntryDate;
+      data = data.split("/").reverse().join("-");
+
+      if (livroParaEditar.image == '') {
+         $img_tag.src = "/imagens/Caminho 261.svg";
+         $img_txt.removeAttribute('style');
+      } else {
+         $img_txt.setAttribute('style', 'display:none;');
+         $img_tag.src = livroParaEditar.image;
+      }
+
+      $titulo.value = livroParaEditar.title;
+      $sinopse.value = livroParaEditar.synopsis;
+      $autor.value = livroParaEditar.author;
+      $genero.value = livroParaEditar.genre;
+      $data.value = data;
+   }
+
+   $salvar.addEventListener('click', function salvarLivro() {
 
       if ($titulo.value == '' || $sinopse.value == '' || $autor.value == ''
          || $genero.value == '' || $data.value == '') {
@@ -30,28 +54,20 @@
       var data = $data.value;
       data = data.split("-").reverse().join("/");
 
-      var leitor = new FileReader();
-      leitor.readAsDataURL($imagem.files[0]);
-
-      leitor.onloadend = function (){
-
-         dados.books.push({
-            title: $titulo.value,
-            author: $autor.value,
-            genre: $genero.value,
-            status: { isActive: true, description: '' },
-            image: leitor.result,
-            systemEntryDate: data,
-            synopsis: $sinopse.value,
-            rentHistory: []
-         });
+      if ($imagem.value == '' && document.URL.includes('editar.html')) {
+         dados.books[idDoLivro].title = $titulo.value;
+         dados.books[idDoLivro].author = $autor.value;
+         dados.books[idDoLivro].genre = $genero.value;
+         dados.books[idDoLivro].image = livroParaEditar.image;
+         dados.books[idDoLivro].systemEntryDate = data;
+         dados.books[idDoLivro].synopsis = $sinopse.value;
 
          var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
 
          const salvar = async () => {
             const criar = await showSaveFilePicker({
                suggestedName: 'data.json',
-   
+
                types: [{
                   description: 'JSON',
                   accept: { 'application/json': ['.json'], },
@@ -61,11 +77,91 @@
             await escrever.write(a);
             await escrever.close();
          }
-   
-         salvar();
-      }
 
-      e.preventDefault();
+         salvar();
+         e.preventdefault();
+
+      } else if ($imagem.value != '' && document.URL.includes('editar.html')) {
+
+         var leitor = new FileReader();
+
+         if ($imagem.files[0]) {
+            leitor.readAsDataURL($imagem.files[0]);
+         } else {
+            $img_tag.src = "imagens/Caminho 261.svg";
+            $img_txt.removeAttribute('style');
+         }
+
+         leitor.onloadend = function () {
+            dados.books[idDoLivro].title = $titulo.value;
+            dados.books[idDoLivro].author = $autor.value;
+            dados.books[idDoLivro].genre = $genero.value;
+            dados.books[idDoLivro].image = leitor.result;
+            dados.books[idDoLivro].systemEntryDate = data;
+            dados.books[idDoLivro].synopsis = $sinopse.value;
+
+            var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
+
+            const salvar = async () => {
+               const criar = await showSaveFilePicker({
+                  suggestedName: 'data.json',
+
+                  types: [{
+                     description: 'JSON',
+                     accept: { 'application/json': ['.json'], },
+                  }],
+               });
+               const escrever = await criar.createWritable();
+               await escrever.write(a);
+               await escrever.close();
+            }
+
+            salvar();
+         }
+
+      } else {
+
+         var leitor = new FileReader();
+
+         if ($imagem.files[0]) {
+            leitor.readAsDataURL($imagem.files[0]);
+         } else {
+            $img_tag.src = "imagens/Caminho 261.svg";
+            $img_txt.removeAttribute('style');
+         }
+
+         leitor.onloadend = function () {
+
+            dados.books.push({
+               title: $titulo.value,
+               author: $autor.value,
+               genre: $genero.value,
+               status: { isActive: true, description: '' },
+               image: leitor.result,
+               systemEntryDate: data,
+               synopsis: $sinopse.value,
+               rentHistory: []
+            });
+
+            var a = '{ "data":' + JSON.stringify(dados, null, '\t') + '}';
+
+            const salvar = async () => {
+               const criar = await showSaveFilePicker({
+                  suggestedName: 'data.json',
+
+                  types: [{
+                     description: 'JSON',
+                     accept: { 'application/json': ['.json'], },
+                  }],
+               });
+               const escrever = await criar.createWritable();
+               await escrever.write(a);
+               await escrever.close();
+            }
+
+            salvar();
+         }
+      }
    });
 
    $cancelar.addEventListener('click', function limpar() {
@@ -74,9 +170,9 @@
       $img_txt.removeAttribute('style');
       $titulo.value = '';
       $sinopse.value = '',
-         $autor.value = '',
-         $genero.value = '',
-         $data.value = '';
+      $autor.value = '',
+      $genero.value = '',
+      $data.value = '';
    });
 
    $imagem.addEventListener('change', function carregarImagem() {
@@ -91,10 +187,10 @@
          leitor.readAsDataURL($imagem.files[0]);
       } else {
          $img_tag.src = "imagens/Caminho 261.svg";
+         $img_txt.removeAttribute('style');
       }
 
       $img_txt.setAttribute('style', 'display:none;');
 
-   })
-
+   });
 })()

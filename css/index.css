@@ -63,7 +63,6 @@ body {
 #index--principal {
    background-color: white;
    margin: 1.5em;
-   padding-bottom: 1.5em;
    min-height: 77vh;
    max-height: fit-content;
 }
@@ -101,4 +100,16 @@ body {
 
 .index--principal-img {
    margin-top: 3.5em;
+}
+
+@media screen and (max-width: 840px) {
+
+   #index--principal {
+      padding: 2em 0;
+   }
+
+   #index--principal-div-container {
+      flex-direction: column;
+      gap: 2em;
+   }
 }

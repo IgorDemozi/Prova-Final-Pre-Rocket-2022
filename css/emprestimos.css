@@ -10,6 +10,10 @@ section {
    height: 51px;
 }
 
+#index--principal {
+   padding-bottom: 1.5em;
+}
+
 table {
    border-collapse: collapse;
    width: 95%;

@@ -3,8 +3,8 @@ body {
    display: flex;
    justify-content: center;
    padding-top: 13vh;
-   background-image: url(../imagens/Retângulo\ 310.svg), url(../imagens/emil-widlund-xrbbXIXAWY0-unsplash.png);
-   background-position-y: 0%, 65%;
+   background-image: url(../imagens/emil-widlund-xrbbXIXAWY0-unsplash.png);
+   background-position-y: 65%;
    font-family: 'Roboto', sans-serif;
 }
 
@@ -14,6 +14,7 @@ body {
    height: 385px;
    border-radius: 5px;
    padding: 2.5em;
+   box-shadow: 0 0 0 1000px rgba(60, 60, 60, 0.6);
 }
 
 #login--container {

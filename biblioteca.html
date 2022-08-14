@@ -62,8 +62,9 @@
          <button id="livro--botao-devolver" style="display: none;">Devolver</button>
 
          <div id="livro--div-botoes">
-            <button id="livro--botao-editar">Editar</button>
+            <a href="editar.html"><button id="livro--botao-editar">Editar</button></a>
             <button id="livro--botao-inativar">Inativar</button>
+            <button id="livro--botao-ativar" style="display:none;">Ativar</button>
             <button id="livro--botao-historico">Histórico</button>
          </div>
 
@@ -92,6 +93,17 @@
                </div>
             </div>
          </div>
+
+         <div id="livro--informacoes-da-inatavacao" style="display: none;">
+            <div id="informacoes-div-1"><h1>Informações da inativação</1h></div>
+         
+            <div id="informacoes-div-2">
+               <div>
+                  <h2>Motivo</h2>
+                  <p id="inativar--motivo-descricao" class="formatacao">motivo</p>
+               </div>
+            </div>
+         </div>
       </section>
 
       <section id="menu-emprestar" style="display:none;">
@@ -110,6 +122,43 @@
          </div>
 
          <button id="menu-emprestar--botao-emprestar">Emprestar</button>
+      </section>
+
+      <section id="menu-inativar" style="display: none;">
+         <div id="menu-inativar--div-fechar">
+            <h1>Inativar livro</h1>
+            <img src="/imagens/Caminho 265.svg" id="menu-inativar--fechar-menu">
+         </div>
+
+         <input id="inativar--motivo" type="text" placeholder="Descrição">
+         <button id="inativar--botao">Inativar</button>
+      </section>
+
+      <section id="menu-historico" style="display: none;">
+         <div id="menu-historico--div-fechar">
+            <h1>Histórico de empréstimos do livro</h1>
+            <img src="/imagens/Caminho 265.svg" id="menu-historico--fechar-menu">
+         </div>
+
+         <table>
+            <thead>
+               <tr>
+                  <th>Aluno</th>
+                  <th>Turma</th>
+                  <th>Data da Retirada</th>
+                  <th>Data da Entrega</th>
+               </tr>
+            </thead>
+      
+            <tbody id="historico--tabela">
+               <tr id="tr-filtros">
+                  <td><input id="filtro-aluno"></td>
+                  <td><input id="filtro-turma"></td>
+                  <td><input id="filtro-retirada" maxlength="10" type="text"></td>
+                  <td><input id="filtro-entrega" maxlength="10" type="text"></td>
+               </tr>
+            </tbody>
+         </table>
       </section>
 
       <div id="cadastro--retornar">
