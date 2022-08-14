@@ -103,3 +103,44 @@ select {
    background-repeat: no-repeat;
    background-position: 95%;
 }
+
+@media screen and (max-width: 930px) {
+
+   #cadastro--super-container {
+      width: fit-content;
+   }
+
+   #cadastro--container {
+      flex-direction: column;
+      gap: 2em;
+   }
+
+   #index--principal {
+      padding-bottom: 2em;
+   }
+}
+
+@media screen and (max-width: 740px) {
+
+   #cadastro--campos {
+      flex-direction: column;
+      height: fit-content;
+      gap: 1em;
+   }
+
+   #cadastro--super-container {
+      height: fit-content;
+   }
+
+   .campos-area {
+      gap: 1em;
+   }
+
+   #cadastro--botoes-div {
+      justify-content: center;
+   }
+
+   #index--principal {
+      padding-top: 0;
+   }
+}

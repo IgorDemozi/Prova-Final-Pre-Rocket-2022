@@ -16,7 +16,7 @@
    var $bt_emprestar = document.querySelector('#livro--botao-emprestar');
    var $bt_devolver = document.querySelector('#livro--botao-devolver');
    var $informacoes = document.querySelector("#livro--informacoes-do-emprestimo");
-   var $informacoes_inativ = document.querySelector("#livro--informacoes-da-inatavacao");
+   var $informacoes_inativ = document.querySelector("#livro--informacoes-da-inativacao");
    var $motivo = document.querySelector("#inativar--motivo-descricao");
    var $bt_inativar = document.querySelector('#livro--botao-inativar');
    var $bt_ativar = document.querySelector('#livro--botao-ativar');

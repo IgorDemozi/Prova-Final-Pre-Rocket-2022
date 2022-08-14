@@ -57,3 +57,10 @@ td {
 #tr-filtros input:focus {
    outline: none;
 }
+
+@media screen and (max-width: 980px){
+   #index--principal {
+      margin-left: 0;
+      margin-right: 0;
+   }
+}
